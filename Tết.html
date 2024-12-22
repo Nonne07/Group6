@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 30px;
+            background-color: #80060c;
+            font-family: "Lato", sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .tab {
+            float: left;
+            border: 1px solid #80060c;
+            background-color: #ffe6e6;
+            width: 30%;
+            height: 700px;
+        }
+        .tab button {
+            display: block;
+            background-color: #ffdbdb;
+            color: darkred;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ffcccc;
+        }
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #80060c;
+            width: 70%;
+            border-left: none;
+            height: 700px;
+            display: none;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        h4, h3, h1, p {
+            color: white;
+        }
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Space between media elements */
+        }
+        .media-container img, .media-container video {
+            width: 100%; 
+            max-width: 350px; 
+            height: auto; 
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Tết Nguyên Đán</h1>
+    <h4><em>Tết Nguyên Đán là lễ hội truyền thống quan trọng nhất của người Việt, đánh dấu sự khởi đầu của một năm mới. Đây là cơ hội để xóa bỏ những điều không may mắn của năm cũ, mang đến hy vọng và niềm vui mới. Tết cũng là dịp thể hiện lòng biết ơn đối với những giá trị gia đình, tình thân.</em></h4>
+
+    <div class="tab">
+        <button class="tablinks" onmouseover="openCity(event, '2023')">2023</button>
+        <button class="tablinks" onmouseover="openCity(event, '2024')">2024</button>
+        <button class="tablinks" onmouseover="openCity(event, '2025')">2025</button>
+    </div>
+
+    <div id="2023" class="tabcontent">
+        <h3>2023</h3>
+        <div class="media-container">
+            <img src="Gói bánh chưng 2023.JPG" alt="Gói bánh chưng 2023">
+            <img src="tet 2023.jpg" alt="Tết 2023">
+            <img src="tet 2023 anh.jpg" alt="Tết 2023 ảnh">
+            <img src="tet 2023 chung.jpg" alt="Tết 2023 chung">
+            <img src="tet 2023 nhan thuong.jpg" alt="Tết 2023 nhận thưởng">
+            <img src="tet 2023 gai.jpg" alt="Tết 2023 gái">
+        </div>
+    </div>
+
+    <div id="2024" class="tabcontent">
+        <h3>2024</h3>
+        <div class="media-container">
+            <img src="Giải 1 Gói bánh chưng- XYT2024.JPG" alt="Giải 1 Gói bánh chưng 2024">
+            <img src="Giải 1 gói bánh chưng- XYT2024 (1).JPG" alt="Giải 1 Gói bánh chưng 2024 (1)">
+             <video src="tết 2023.mp4" controls></video>
+        </div>
+    </div>
+
+    <div id="2025" class="tabcontent">
+        <h3>2025</h3>
+        <p>Coming soon</p>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>

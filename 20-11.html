@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 30px;
+            background-color: #80060c;
+            font-family: "Lato", sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .tab {
+            float: left;
+            border: 1px solid #80060c;
+            background-color: #ffe6e6;
+            width: 30%;
+            height: 700px;
+        }
+        .tab button {
+            display: block;
+            background-color: #ffdbdb;
+            color: darkred;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ffcccc;
+        }
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #80060c;
+            width: 70%;
+            border-left: none;
+            height: 700px;
+            display: none;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        h4, h3, h1 {
+            color: white;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Space between images */
+        }
+        .image-container img {
+            object-fit: cover;
+            width: 100%; 
+            max-width: 300px; 
+            height: auto; 
+            display: flex;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Ngày nhà giáo Việt Nam 20-11</h1>
+    <h4><em>Ngày 20/11 là một ngày lễ tôn vinh các thầy cô giáo và những người làm công tác giáo dục nhằm để ghi nhận công lao của các thầy cô trong việc dạy dỗ, nuôi dưỡng trí thức và hình thành nhân cách cho thế hệ trẻ.</em></h4>
+
+    <div class="tab">
+        <button class="tablinks" onmouseover="openCity(event, '2022')">2022</button>
+        <button class="tablinks" onmouseover="openCity(event, '2023')">2023</button>
+        <button class="tablinks" onmouseover="openCity(event, '2024')">2024</button>
+    </div>
+
+    <div id="2022" class="tabcontent">
+        <h3>2022</h3>
+        <video src="20_11_2022.mp4" controls width="500"></video>
+        <div class="image-container">
+            <img src="20-11 lopp.jpg" alt="2022 Image">
+            <img src="20_11_2022 (2).jpg" alt="2022 Image">
+        </div>
+    </div>
+
+    <div id="2023" class="tabcontent">
+        <h3>2023</h3>
+        <div class="image-container">
+          <video src="20_11_2023.mp4" controls width="500"></video>
+          <img src="Văn nghệ 20_11_2023.JPG" alt="2023 Image">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F100085056613709%2Fvideos%2F1421790335357349%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+    </div>
+
+    <div id="2024" class="tabcontent">
+        <h3>2024</h3>
+        <div class="image-container">
+            <img src="Văn nghệ 12a11.jpg" alt="2024 Image 1">
+            <img src="20_11_2024.JPG" alt="2024 Image 2">
+            <img src="20_11_2024 (1).jpg" alt="2024 Image 3">
+            <video src="20_11 2024.mp4" controls width="500"></video>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>

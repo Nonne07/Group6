@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 30px;
+            background-color: #80060c;
+            font-family: "Lato", sans-serif;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .tab {
+            float: left;
+            border: 1px solid #80060c;
+            background-color: #ffe6e6;
+            width: 30%;
+            height: 700px;
+        }
+        .tab button {
+            display: block;
+            background-color: #ffdbdb;
+            color: darkred;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ffcccc;
+        }
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #80060c;
+            width: 70%;
+            border-left: none;
+            height: 700px;
+            display: none;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        h4, h3, h1, p {
+            color: white;
+        }
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Space between media elements */
+        }
+        .media-container video, .media-container img, .media-container iframe {
+            width: 100%;
+            max-width: 400px;
+            height: auto; 
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Quốc tế phụ nữ 8-3</h1>
+    <h4><em>Ngày 8 tháng 3 là Ngày Quốc tế Phụ nữ, được tổ chức để tôn vinh những đóng góp của phụ nữ. Đây là dịp để các bạn nam A11 gửi những yêu thương đến các mẹ, cô giáo và các bạn nữ trong lớp.</em></h4>
+
+    <div class="tab">
+        <button class="tablinks" onmouseover="openCity(event, '2023')">2023</button>
+        <button class="tablinks" onmouseover="openCity(event, '2024')">2024</button>
+        <button class="tablinks" onmouseover="openCity(event, '2025')">2025</button>
+    </div>
+
+    <div id="2023" class="tabcontent">
+        <h3>2023</h3>
+        <div class="media-container">
+            <video src="8_3 2022.mp4" controls></video>
+            <video src="8_3_2022.mp4" controls></video>
+            <img src="8_3_2024.JPG" alt="2024 Image">
+        </div>
+    </div>
+
+    <div id="2024" class="tabcontent">
+        <h3>2024</h3>
+        <div >
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F100085056613709%2Fvideos%2F1117830709399081%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+    </div>
+
+    <div id="2025" class="tabcontent">
+        <h3>2025</h3>
+        <p>Coming soon</p>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
